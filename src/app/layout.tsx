@@ -13,8 +13,16 @@ const dancingScript = Dancing_Script({
 })
 
 export const metadata: Metadata = {
-  title: "Porfolio - Kaushik L. Mitra",
-  description: "A portfolio for myself.",
+  title: "Porfolio - Kaushik Kr. Mitra",
+  description: "Welcome to my personal portfolio!",
+  icons: {
+    icon: "/assets/KM.png",
+  },
+  openGraph: {
+    title: "Porfolio - Kaushik Kr. Mitra",
+    description: "Welcome to my personal portfolio!",
+    images: "/assets/KM.png",
+  },
 };
 
 export default function RootLayout({
