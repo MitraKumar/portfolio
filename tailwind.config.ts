@@ -17,7 +17,17 @@ const config = {
         "2xl": "1400px",
       },
     },
+    screens: {
+      'xs': '480px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '960px',
+    },
     extend: {
+      fontFamily: {
+        inter: ['var(--font-inter)'],
+        "dancing-script": ['var(--font-dancing-script)'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +57,14 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        'brush-pattern': "url('/assets/brush-stroke.svg')",
+        'brick-pattern': "url('/assets/brick-pattern.svg')",
+        'wave-pattern': "url('/assets/wave-pattern.svg')",
+      },
+      backgroundSize: {
+        'full-width': '120%',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

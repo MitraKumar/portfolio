@@ -26,7 +26,7 @@ type NavBarMenuItemuProps = {
 function NavBarMenuItem({ children }: NavBarMenuItemuProps) {
   return (
     <li className="inline-block p-4">
-      <a className="text-black relative w-fit after:block after:content-[''] after:absolute after:h-[3px] after:bg-gradient-to-br from-accent to-primary after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left" href="#">{ children }</a>
+      <a className="text-white relative w-fit after:block after:content-[''] after:absolute after:h-[3px] after:bg-gradient-to-br from-accent to-primary after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left" href="#">{ children }</a>
     </li>
   );
 }
@@ -46,7 +46,7 @@ export function NavBar() {
 
       <HamBurgurMenu isOpen={mobileMenuIsOpen} handleMobileNavClick={handleMobileNavClick} />
 
-      <div className={`z-50 fixed md:static w-full inset-0 left-1/2 p-6 pt-16 xs:p-24 sm:p-32 md:p-0 bg-secondary opacity-95 md:opacity-100 md:bg-inherit flex flex-col md:flex-row items-start md:items-center transition-transform ${!mobileMenuIsOpen ? 'translate-x-full' : ''} md:translate-x-0`}>
+      <div className={`z-50 fixed md:static w-full inset-0 left-1/2 p-6 pt-16 xs:p-24 sm:p-32 md:p-0 bg-primary opacity-95 md:opacity-100 md:bg-inherit flex flex-col md:flex-row items-start md:items-center transition-transform ${!mobileMenuIsOpen ? 'translate-x-full' : ''} md:translate-x-0`}>
         <nav className="w-full md:flex items-center justify-between">
           <ul className="flex flex-col md:flex-row gap-4">
             <NavBarMenuItem>Home</NavBarMenuItem>
