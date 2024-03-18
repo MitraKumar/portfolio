@@ -1,6 +1,6 @@
 "use client";
 
-import { MotionValue, motion, useScroll, useTransform } from "framer-motion"
+import { MotionValue, motion, useMotionValueEvent, useScroll, useTransform, Variants } from "framer-motion"
 import { forwardRef, useRef } from "react";
 
 
@@ -50,30 +50,40 @@ const timeline_content: TimeLineItem[] = [
   },
 ];
 
+const timelineTextVariants: Variants = {
+  hidden: {
+    scaleX: 0,
+    scaleY: 0,
+  },
+  visible: {
+    scaleX: 1,
+    scaleY: 1,
+  }
+};
+
 type TimeLineComponentProp = {
   title?: string,
   subTitle: string,
-  scaleX: MotionValue<number>,
 }
 
-const TimelineLeftItem = ({ title, subTitle, scaleX }: TimeLineComponentProp) => (
-  <div className="flex flex-row-reverse md:contents cursor-pointer">
-    <motion.div className="bg-gradient-to-br from-accent to-primary col-start-1 col-end-5 p-4 rounded-xl my-4 mr-auto md:mr-[inherit] md:ml-auto shadow-md origin-left md:origin-right" style={{ scaleX: scaleX, scaleY: scaleX }}>
-      {title ? <h3 className="font-semibold text-lg mb-1">{title}</h3> : ''}
-      <p className="leading-tight ">
-        {subTitle}
-      </p>
-    </motion.div>
-    <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
-      <div className="h-full w-6 flex items-center justify-center">
-        <div className="h-full w-1 bg-gradient-to-br from-accent to-primary pointer-events-none"></div>
+const TimelineLeftItem = ({ title, subTitle }: TimeLineComponentProp) => (
+    <motion.div className="flex flex-row-reverse md:contents cursor-pointer">
+      <motion.div initial="hidden" whileInView="visible" variants={timelineTextVariants} className="bg-gradient-to-br from-accent to-primary col-start-1 col-end-5 p-4 rounded-xl my-4 mr-auto md:mr-[inherit] md:ml-auto shadow-md origin-left md:origin-right" >
+        {title ? <h3 className="font-semibold text-lg mb-1">{title}</h3> : ''}
+        <p className="leading-tight ">
+          {subTitle}
+        </p>
+      </motion.div>
+      <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
+        <div className="h-full w-6 flex items-center justify-center">
+          <div className="h-full w-1 bg-gradient-to-br from-accent to-primary pointer-events-none origin-top"></div>
+        </div>
+        <div className="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-gradient-to-br from-accent to-primary shadow"></div>
       </div>
-      <div className="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-gradient-to-br from-accent to-primary shadow"></div>
-    </div>
-  </div>
-);
+    </motion.div>
+  );
 
-function TimelineRightItem({ title, subTitle, scaleX }: TimeLineComponentProp) {
+function TimelineRightItem({ title, subTitle }: TimeLineComponentProp) {
   return (
     <div className="flex md:contents cursor-pointer">
       <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
@@ -82,7 +92,7 @@ function TimelineRightItem({ title, subTitle, scaleX }: TimeLineComponentProp) {
         </div>
         <div className="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-gradient-to-br from-accent to-primary shadow"></div>
       </div>
-      <motion.div className="bg-gradient-to-br from-accent to-primary col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md origin-left" style={{ scaleX: scaleX, scaleY: scaleX }}>
+      <motion.div initial="hidden" whileInView="visible" variants={timelineTextVariants} className="bg-gradient-to-br from-accent to-primary col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md origin-left">
         {title ? <h3 className="font-semibold text-lg mb-1">{title}</h3> : ''}
         <p className="leading-tight ">
           {subTitle}
@@ -94,18 +104,14 @@ function TimelineRightItem({ title, subTitle, scaleX }: TimeLineComponentProp) {
 
 
 function Timeline() {
-
-  const { scrollYProgress } = useScroll();
-  const scaleX = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]);
-
   return (
     <section className="relative container mx-auto mt-16">
-      <div className="flex flex-col md:grid grid-cols-9 mx-auto p-2 text-blue-50">
+      <div className="relative flex flex-col md:grid grid-cols-9 mx-auto p-2 text-blue-50">
         {
           timeline_content.map((data, index) => (
             data.orientation === "left" ?
-              <TimelineLeftItem key={index} title={data.title} subTitle={data.subTitle} scaleX={scaleX} /> :
-              <TimelineRightItem key={index} title={data.title} subTitle={data.subTitle} scaleX={scaleX} />
+              <TimelineLeftItem key={index} title={data.title} subTitle={data.subTitle} /> :
+              <TimelineRightItem key={index} title={data.title} subTitle={data.subTitle} />
           ))
         }
       </div>
