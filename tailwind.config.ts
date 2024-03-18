@@ -63,7 +63,7 @@ const config = {
         'wave-pattern': "url('/assets/wave-pattern.svg')",
       },
       backgroundSize: {
-        'full-width': '120%',
+        'full-width': '150%',
       }
     },
   },
