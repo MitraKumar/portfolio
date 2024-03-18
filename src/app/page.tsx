@@ -1,3 +1,4 @@
+import AboutMe from "@/components/AboutMe";
 import Header from "@/components/Header";
 import { NavBar } from "@/components/Navbar";
 
@@ -8,6 +9,8 @@ export default function Home() {
         <NavBar />
         <Header />
       </div>
+
+      <AboutMe />
     </main>
   );
 }
