@@ -13,6 +13,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { AnimatedLinkWithUnderline } from "@/components/AnimatedLinksWithUnderline";
+import { SecondaryButton } from "@/components/SecondaryButton";
 
 export default function AboutPage() {
   return (
@@ -30,29 +32,29 @@ export default function AboutPage() {
             <CarouselItem className="lg:basis-1/2" key={1}>
 
               <CardContainer className="inter-var" key={1}>
-                <CardBody className="bg-white relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                <CardBody className="bg-white relative group/card border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
                   <CardItem
                     translateZ="50"
-                    className="text-2xl font-bold text-primary dark:text-white"
+                    className="text-2xl font-bold text-primary"
                   >
                     Backend Tech
                   </CardItem>
 
                   <CardItem
                     translateZ="60"
-                    className="text-xl font-bold text-black dark:text-white"
+                    className="text-xl font-bold text-black"
                   >
                     PHP
                   </CardItem>
                   <CardItem
                     translateZ="60"
-                    className="text-xl font-bold text-black dark:text-white"
+                    className="text-xl font-bold text-black"
                   >
                     Drupal
                   </CardItem>
                   <CardItem
                     translateZ="60"
-                    className="text-xl font-bold text-black dark:text-white"
+                    className="text-xl font-bold text-black"
                   >
                     MySQL
                   </CardItem>
@@ -65,29 +67,29 @@ export default function AboutPage() {
             <CarouselItem className="lg:basis-1/2" key={2}>
 
               <CardContainer className="inter-var" key={2}>
-                <CardBody className="bg-white relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                <CardBody className="bg-white relative group/card border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
                   <CardItem
                     translateZ="50"
-                    className="text-2xl font-bold text-primary dark:text-white"
+                    className="text-2xl font-bold text-primary"
                   >
                     Frontend Tech
                   </CardItem>
 
                   <CardItem
                     translateZ="60"
-                    className="text-xl font-bold text-black dark:text-white"
+                    className="text-xl font-bold text-black"
                   >
                     Javascript
                   </CardItem>
                   <CardItem
                     translateZ="60"
-                    className="text-xl font-bold text-black dark:text-white"
+                    className="text-xl font-bold text-black"
                   >
                     React / NextJs
                   </CardItem>
                   <CardItem
                     translateZ="60"
-                    className="text-xl font-bold text-black dark:text-white"
+                    className="text-xl font-bold text-black"
                   >
                     MySQL
                   </CardItem>
@@ -101,6 +103,10 @@ export default function AboutPage() {
           <CarouselNext />
         </Carousel>
 
+
+        <div className="my-16 flex justify-center">
+          <SecondaryButton href="/projects">View Projects</SecondaryButton>
+        </div>
       </section>
 
 

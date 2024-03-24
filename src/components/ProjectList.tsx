@@ -24,17 +24,17 @@ export const ProjectList = function ({ projects }: { projects: Project[] }) {
         {
           projects.map(project => (
             <CardContainer className="inter-var" key={project.id}>
-              <CardBody className="bg-white relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+              <CardBody className="bg-white relative group/card border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
                 <CardItem
                   translateZ="50"
-                  className="text-xl font-bold text-primary dark:text-white"
+                  className="text-xl font-bold text-primary"
                 >
                   {project.title}
                 </CardItem>
                 <CardItem
                   as="p"
                   translateZ="60"
-                  className="text-black text-sm max-w-sm mt-2 dark:text-neutral-300"
+                  className="text-black text-sm max-w-sm mt-2 "
                 >
                   {project.subTitle}
                 </CardItem>
