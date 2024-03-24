@@ -19,7 +19,6 @@ export const ProjectList = function ({ projects }: { projects: Project[] }) {
 
   return (
     <section className="container mx-auto px-4">
-      <h2 className="text-5xl">Projects</h2>
       <div className="flex flex-col md:flex-row gap-4">
         {
           projects.map(project => (

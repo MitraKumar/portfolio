@@ -5,7 +5,7 @@
 @layer base {
   :root {
 
-    --rich-black: 209, 77%, 23%, 1;
+    --rich-black: 209, 76%, 8%, 1;
     --saffron: 48, 96%, 45%, 1;
     --moonstone: 188, 39%, 56%, 1;
     --mint-green: 171, 57%, 89%, 1;
@@ -18,7 +18,7 @@
     --tomato: 10, 94%, 60%, 1;
 
     --white: var(--lemon-chiffon);
-    --black: var(--yale-blue);
+    --black: var(--rich-black);
 
     --primary: var(--tomato);
     --secondary: var(--sandy-brown);

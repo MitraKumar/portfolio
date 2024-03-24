@@ -5,6 +5,7 @@ import { ProjectList } from "@/components/ProjectList";
 
 import { getProjects } from "@/lib/projects";
 import { getBlogs, type Blog} from "@/lib/blogs";
+import { PageTitle } from "@/components/PageHeading";
 
 function BlogItem(blog: Blog) {
   return (
@@ -29,6 +30,8 @@ export default function ProjectsPage() {
     <main>
 
       <NavBar />
+
+      <PageTitle>Projects</PageTitle>
 
       <div className="mt-8">
         <ProjectList projects={projects} />

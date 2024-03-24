@@ -15,16 +15,19 @@ import {
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { AnimatedLinkWithUnderline } from "@/components/AnimatedLinksWithUnderline";
 import { SecondaryButton } from "@/components/SecondaryButton";
+import { PageTitle } from "@/components/PageHeading";
 
 export default function AboutPage() {
   return (
     <main>
       <NavBar />
 
+      <PageTitle>About Myself</PageTitle>
+
       <AboutMe />
 
-      <section className="container mx-auto px-4 my-8">
-        <h2 className="text-5xl">Skills</h2>
+      <section className="container mx-auto px-4 my-16">
+        <h2 className="text-5xl text-center">Skills</h2>
 
 
         <Carousel>
@@ -112,7 +115,7 @@ export default function AboutPage() {
 
 
       <div className="container mx-auto px-4">
-        <h2 className="text-5xl text-center text-primary">My Journey</h2>
+        <h2 className="text-5xl text-center">My Journey</h2>
       </div>
       <Timeline />
 
