@@ -8,10 +8,8 @@ import Timeline from "@/components/Timeline";
 export default function Home() {
   return (
     <main>
-      <div className="bg-brush-pattern bg-full-width bg-no-repeat bg-center">
-        <NavBar />
-        <Header />
-      </div>
+      <NavBar />
+      <Header />
 
       <AboutMe />
       <Timeline />

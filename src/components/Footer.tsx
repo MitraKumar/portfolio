@@ -3,9 +3,9 @@ import Image from "next/image";
 function Footer() {
   return (
     <>
-      <div className="bg-wave-pattern py-8 px-4">
+      <div className="py-16 px-4">
         <section className="container mx-auto p-1">
-          <div className="flex justify-between py-4 border-y-4">
+          <div className="flex justify-between py-4 border-y-2 border-white">
             <div className="flex gap-4">
               <a href="https://www.linkedin.com/in/kkmitra/" target="_blank" className="w-[30px]">
                 <Image src={"/assets/social-icons/linkedin.png"} alt="" width={30} height={30}/>
@@ -23,7 +23,7 @@ function Footer() {
               </a>
             </div>
           </div>
-          <div className="pt-4 text-center text-zinc-100">
+          <div className="pt-4 text-center text-white">
            <p>Copyright © 2024. Made by - Kaushik</p>
           </div>
         </section>

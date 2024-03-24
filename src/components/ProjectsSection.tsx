@@ -11,6 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card"
 import { SecondaryButton } from "@/components/SecondaryButton"
+import { AnimatedLinkWithUnderline } from "./AnimatedLinksWithUnderline";
 
 interface Project {
   title: string,
@@ -54,8 +55,8 @@ function ProjectItem(project: Project) {
           <p>{project.description}</p>
         </CardContent>
         <CardFooter className="flex justify-end">
-          {project.url.github ? <SecondaryButton text={"Read More"} href={project.url.github} /> : ""}
-          {project.url.website ? <SecondaryButton text={"Read More"} href={project.url.website} /> : ""}
+          {project.url.github ? <SecondaryButton href={project.url.github}>Read More</SecondaryButton> : ""}
+          {project.url.website ? <SecondaryButton href={project.url.website}>Read More</SecondaryButton> : ""}
         </CardFooter>
       </Card>
     </CarouselItem>
@@ -70,7 +71,7 @@ function BlogItem(blog: Blog) {
           <p>{ blog.description }</p>
         </CardContent>
         <CardFooter className="flex justify-end">
-          <a href={blog.url} target="_blank" className="text-accent hover:opacity-80">Check Out Blog...</a>
+          <AnimatedLinkWithUnderline href={blog.url} isExternal>Check out the Blog...</AnimatedLinkWithUnderline>
         </CardFooter>
       </Card>
     </CarouselItem>
@@ -80,7 +81,7 @@ function BlogItem(blog: Blog) {
 function Projects() {
 
   return (
-    <div className="bg-wave-pattern py-16 px-4 mt-16">
+    <div className="py-16 px-4 mt-16">
       <section className="container mx-auto text-white">
         <h2 className="text-6xl">Projects</h2>
         <div className="mt-8 grid md:grid-cols-2 gap-4">

@@ -69,8 +69,8 @@ type TimeLineComponentProp = {
 const TimelineLeftItem = ({ title, subTitle }: TimeLineComponentProp) => (
     <motion.div className="flex flex-row-reverse md:contents cursor-pointer">
       <motion.div initial="hidden" whileInView="visible" variants={timelineTextVariants} className="bg-gradient-to-br from-accent to-primary col-start-1 col-end-5 p-4 rounded-xl my-4 mr-auto md:mr-[inherit] md:ml-auto shadow-md origin-left md:origin-right" >
-        {title ? <h3 className="font-semibold text-lg mb-1">{title}</h3> : ''}
-        <p className="leading-tight ">
+        {title ? <h3 className="font-semibold text-lg mb-1 text-black">{title}</h3> : ''}
+        <p className="leading-tight text-black">
           {subTitle}
         </p>
       </motion.div>
@@ -93,8 +93,8 @@ function TimelineRightItem({ title, subTitle }: TimeLineComponentProp) {
         <div className="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-gradient-to-br from-accent to-primary shadow"></div>
       </div>
       <motion.div initial="hidden" whileInView="visible" variants={timelineTextVariants} className="bg-gradient-to-br from-accent to-primary col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md origin-left">
-        {title ? <h3 className="font-semibold text-lg mb-1">{title}</h3> : ''}
-        <p className="leading-tight ">
+        {title ? <h3 className="font-semibold text-lg mb-1 text-black">{title}</h3> : ''}
+        <p className="leading-tight text-black">
           {subTitle}
         </p>
       </motion.div>

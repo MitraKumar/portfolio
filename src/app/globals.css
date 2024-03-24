@@ -5,18 +5,24 @@
 @layer base {
   :root {
 
-    --rich-black: 251, 51%, 8%, 1;
+    --rich-black: 209, 77%, 23%, 1;
     --saffron: 48, 96%, 45%, 1;
     --moonstone: 188, 39%, 56%, 1;
     --mint-green: 171, 57%, 89%, 1;
     --seasalt: 0, 0%, 98%, 1;
 
-    --white: var(--seasalt);
-    --black: var(--rich-black);
+    --yale-blue: 209, 77%, 23%, 1;
+    --lemon-chiffon: 48, 83%, 89%, 1;
+    --naples-yellow: 47, 87%, 66%, 1;
+    --sandy-brown: 28, 83%, 61%, 1;
+    --tomato: 10, 94%, 60%, 1;
 
-    --primary: var(--moonstone);
-    --secondary: var(--mint-green);
-    --accent: var(--saffron);
+    --white: var(--lemon-chiffon);
+    --black: var(--yale-blue);
+
+    --primary: var(--tomato);
+    --secondary: var(--sandy-brown);
+    --accent: var(--naples-yellow);
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
@@ -31,7 +37,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-white text-black;
+    @apply bg-black text-white;
   }
 
 }
