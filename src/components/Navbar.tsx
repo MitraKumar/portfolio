@@ -12,7 +12,7 @@ type HamBurgurMenuProps = {
 function HamBurgurMenu({ isOpen, handleMobileNavClick }: HamBurgurMenuProps) {
 
   return (
-    <button className="m-4 flex flex-col justify-center items-center z-[9999] md:hidden" onClick={handleMobileNavClick}>
+    <button aria-label="navigation-button" className="m-4 flex flex-col justify-center items-center z-[9999] md:hidden" onClick={handleMobileNavClick}>
       <span className={`bg-black block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
       <span className={`bg-black block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? 'opacity-0' : 'opacity-500'}`}></span>
       <span className={`bg-black block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
