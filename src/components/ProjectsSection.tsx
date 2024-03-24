@@ -55,8 +55,8 @@ function ProjectItem(project: Project) {
           <p>{project.description}</p>
         </CardContent>
         <CardFooter className="flex justify-end">
-          {project.url.github ? <SecondaryButton href={project.url.github}>Read More</SecondaryButton> : ""}
-          {project.url.website ? <SecondaryButton href={project.url.website}>Read More</SecondaryButton> : ""}
+          {project.url.github ? <SecondaryButton href={project.url.github} isExternal>Read More</SecondaryButton> : ""}
+          {project.url.website ? <SecondaryButton href={project.url.website} isExternal>Read More</SecondaryButton> : ""}
         </CardFooter>
       </Card>
     </CarouselItem>

@@ -28,7 +28,7 @@ type NavBarMenuItemuProps = {
 function NavBarMenuItem({ href, text }: NavBarMenuItemuProps) {
   return (
     <li className="inline-block p-4">
-      <Link className="text-white relative w-fit after:block after:content-[''] after:absolute after:h-[3px] after:bg-gradient-to-br from-accent to-primary after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left" href={href}>{ text }</Link>
+      <Link className="text-black relative w-fit after:block after:content-[''] after:absolute after:h-[3px] after:bg-gradient-to-br from-accent to-primary after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left" href={href}>{ text }</Link>
     </li>
   );
 }
@@ -44,19 +44,20 @@ export function NavBar() {
   }
 
   return (
-    <header className="container mx-auto flex sticky top-0 z-[9999] bg-white md:bg-transparent">
+    <header className="sticky top-0 z-[9999] bg-white">
 
-      <HamBurgurMenu isOpen={mobileMenuIsOpen} handleMobileNavClick={handleMobileNavClick} />
-
-      <div className={`z-50 fixed md:static w-full inset-0 left-0 p-6 pt-16 xs:p-24 sm:p-32 md:p-0 bg-primary md:bg-inherit flex flex-col md:flex-row items-start md:items-center transition-transform ${!mobileMenuIsOpen ? 'translate-x-full' : ''} md:translate-x-0`}>
-        <nav className="w-full md:flex items-center justify-between">
-          <ul className="flex flex-col md:flex-row gap-4">
-            <NavBarMenuItem href="/" text="Home" />
-            <NavBarMenuItem href="#" text="About Me" />
-            <NavBarMenuItem href="/projects" text="Projects" />
-            <NavBarMenuItem href="#" text="Contact" />
-          </ul>
-        </nav>
+      <div className="container mx-auto flex">
+        <HamBurgurMenu isOpen={mobileMenuIsOpen} handleMobileNavClick={handleMobileNavClick} />
+        <div className={`z-50 fixed md:static w-full inset-0 left-0 p-6 pt-16 xs:p-24 sm:p-32 md:p-0 bg-primary md:bg-inherit flex flex-col md:flex-row items-start md:items-center transition-transform ${!mobileMenuIsOpen ? 'translate-x-full' : ''} md:translate-x-0`}>
+          <nav className="w-full md:flex items-center justify-center">
+            <ul className="flex flex-col md:flex-row gap-4">
+              <NavBarMenuItem href="/" text="Home" />
+              <NavBarMenuItem href="/about" text="About Me" />
+              <NavBarMenuItem href="/projects" text="Projects" />
+              {/* <NavBarMenuItem href="#" text="Contact" /> */}
+            </ul>
+          </nav>
+        </div>
       </div>
 
     </header>
