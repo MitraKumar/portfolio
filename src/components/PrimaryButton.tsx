@@ -1,4 +1,4 @@
-export const PrimaryButton = ({ text, href, label, isExternal, isDownloadble }: { text: string, href: string, label: string, isExternal?: boolean, isDownloadble?: boolean }) => {
+export const PrimaryButton = ({ text, href, label, isExternal, isDownloadble }: { text: string, href: string, label?: string, isExternal?: boolean, isDownloadble?: boolean }) => {
   return (
     <button className="py-3 px-6 bg-gradient-to-br from-accent to-primary hover:opacity-80">
       {
