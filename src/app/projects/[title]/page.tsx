@@ -20,11 +20,16 @@ import {
 } from "@/components/ui/breadcrumb"
 import { CustomMDX } from '@/components/mdx-remote';
 
+import { getProjectWithTitle } from "@/lib/projects";
+
 
 export default async function ProjectPage({ params }: { params: { title: string } }) {
 
 
-  const file = await fs.readFile(process.cwd() + '/src/data/projects/portfolio.md', 'utf8');
+  const markdown_data = await getProjectWithTitle(params.title);
+  if (markdown_data === "") {
+    return notFound();
+  }
 
   return (
     <>
@@ -34,25 +39,25 @@ export default async function ProjectPage({ params }: { params: { title: string 
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/projects">Projects</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>Portfolio</BreadcrumbPage>
+              <BreadcrumbLink asChild>
+                <Link href="/projects">Projects</Link>
+              </BreadcrumbLink>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
       </div>
 
-      <div className='container mx-auto my-16 px-4'>
-        
-        <CustomMDX source={file} />
+      <section className='container mx-auto my-16 px-4'>
 
-      </div>
+        <CustomMDX source={markdown_data} />
+
+      </section>
 
       <Footer />
 

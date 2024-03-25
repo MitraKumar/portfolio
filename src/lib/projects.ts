@@ -1,3 +1,5 @@
+import { promises as fs } from 'fs';
+
 export type Project = {
   id: number,
   title: string,
@@ -49,4 +51,13 @@ export const getProjects = function(): Project[] {
       },
     },
   ];
-} 
+}
+
+export const getProjectWithTitle = async (title: string): Promise<string> => {
+  try {
+    const file_data = await fs.readFile(`${process.cwd()}/src/data/projects/${title}.md`, 'utf8');
+    return file_data;
+  } catch (error) {
+    return "";
+  }
+}

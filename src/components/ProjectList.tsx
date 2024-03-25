@@ -50,25 +50,13 @@ export const ProjectList = function ({ projects }: { projects: Project[] }) {
                   <CardItem
                     translateZ={20}
                     as={AnimatedLinkWithUnderline}
-                    href={project.links.github}
+                    href={`/projects/${project.title}`}
                     target="__blank"
-                    isExternal
                     type="dark"
+                    isAnimatedLinkWithUnderline
                   >
-                    Source Code
+                    Know More
                   </CardItem>
-                  {
-                    project.links.liveUrl &&
-                    <CardItem
-                      translateZ={20}
-                      as={AnimatedLinkWithUnderline}
-                      href={project.links.liveUrl}
-                      target="__blank"
-                      isExternal
-                    >
-                      Visit Site
-                    </CardItem>
-                  }
                 </div>
               </CardBody>
             </CardContainer>

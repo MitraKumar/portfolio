@@ -24,8 +24,9 @@ function ProjectItem(project: Project) {
           <p>{project.description}</p>
         </CardContent>
         <CardFooter className="flex justify-end gap-4">
-          {project.links.github ? <SecondaryButton href={project.links.github} isExternal label="Github Source Code">Read More</SecondaryButton> : ""}
-          {project.links.liveUrl ? <SecondaryButton href={project.links.liveUrl} isExternal label="Live Website Link">Visit</SecondaryButton> : ""}
+          {/* {project.links.github ? <SecondaryButton href={project.links.github} isExternal label="Github Source Code">Read More</SecondaryButton> : ""}
+          {project.links.liveUrl ? <SecondaryButton href={project.links.liveUrl} isExternal label="Live Website Link">Visit</SecondaryButton> : ""} */}
+          <SecondaryButton href={`/projects/${project.title}`}>Know More</SecondaryButton>
         </CardFooter>
       </Card>
     </CarouselItem>

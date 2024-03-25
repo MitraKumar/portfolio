@@ -9,6 +9,7 @@ import React, {
   useRef,
   useEffect,
 } from "react";
+import { AnimatedLinkWithUnderline } from "../AnimatedLinksWithUnderline";
 
 const MouseEnterContext = createContext<
   [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
@@ -133,6 +134,12 @@ export const CardItem = ({
       ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
     }
   };
+
+  if (rest.isAnimatedLinkWithUnderline) {
+    return (
+      <AnimatedLinkWithUnderline href={rest.href}>{children}</AnimatedLinkWithUnderline>
+    );
+  }
 
   return (
     <Tag
