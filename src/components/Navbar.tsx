@@ -3,6 +3,8 @@
 import { useState, ReactNode, MouseEvent } from "react"
 import { PrimaryButton } from "@/components/PrimaryButton";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 
 type HamBurgurMenuProps = {
@@ -26,9 +28,12 @@ type NavBarMenuItemuProps = {
   text: string,
 }
 function NavBarMenuItem({ href, text }: NavBarMenuItemuProps) {
+
+  const pathname = usePathname();
+
   return (
     <li className="inline-block p-4">
-      <Link className="text-black relative w-fit after:block after:content-[''] after:absolute after:h-[3px] after:bg-gradient-to-br from-accent to-primary after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left" href={href}>{ text }</Link>
+      <Link className={ cn("text-black relative w-fit after:block after:content-[''] after:absolute after:h-[3px] after:bg-gradient-to-br from-accent to-primary after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left", pathname === href && "text-white md:text-primary") } href={href}>{ text }</Link>
     </li>
   );
 }
