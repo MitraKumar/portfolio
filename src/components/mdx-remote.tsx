@@ -4,8 +4,8 @@ import { HeaderTwo } from './mdx/HeaderTwo'
 import { Paragragraph } from './mdx/Paragraph'
 import { UnorderedList } from './mdx/UnorderedList'
 import { ListItem } from './mdx/ListItem'
-import { MdxImage } from './mdx/Image'
-import { MdxLink } from './ui/MDXLink'
+import { MdxImage } from './mdx/MDXImage'
+import { MdxLink } from './mdx/MDXLink'
 
 const components = {
   h1: (props: any) => <HeaderOne {...props}>{ props.children }</HeaderOne>,
