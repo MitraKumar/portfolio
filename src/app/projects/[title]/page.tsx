@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/breadcrumb"
 import { CustomMDX } from '@/components/mdx-remote';
 
-import { getProjectWithTitle } from "@/lib/projects";
+import { getProjectWithTitle, getProjectTitles } from "@/lib/projects";
 
 
 export default async function ProjectPage({ params }: { params: { title: string } }) {
@@ -65,4 +65,8 @@ export default async function ProjectPage({ params }: { params: { title: string 
   );
 
 
+}
+
+export async function generateStaticParams() {
+  return getProjectTitles();
 }

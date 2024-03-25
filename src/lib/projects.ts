@@ -61,3 +61,17 @@ export const getProjectWithTitle = async (title: string): Promise<string> => {
     return "";
   }
 }
+
+export const getProjectTitles = (): Array<{ title: string }> => {
+  return [
+    {
+      title: "portfolio"
+    },
+    {
+      title: "phil-o-sophy"
+    },
+    {
+      title: "command-man"
+    },
+  ]
+}
