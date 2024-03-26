@@ -7,8 +7,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { AnimatedLinkWithUnderline } from "./AnimatedLinksWithUnderline";
 import { getProjects, type Project } from "@/lib/projects";
+import { AnimatedLinkWithUnderline } from "./AnimatedLinksWithUnderline";
 
 function ProjectItem(project: Project) {
   return (

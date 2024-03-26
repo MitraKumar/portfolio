@@ -1,9 +1,9 @@
 import AboutMe from "@/components/AboutMe";
 import Footer from "@/components/Footer";
 import { NavBar } from "@/components/Navbar";
-import Timeline from "@/components/Timeline";
 import { PageTitle } from "@/components/PageHeading";
 import { SecondaryButton } from "@/components/SecondaryButton";
+import Timeline from "@/components/Timeline";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import {
   Carousel,

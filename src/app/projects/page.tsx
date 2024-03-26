@@ -1,8 +1,8 @@
 import { AnimatedLinkWithUnderline } from "@/components/AnimatedLinksWithUnderline";
 import Footer from "@/components/Footer";
 import { NavBar } from "@/components/Navbar";
-import { ProjectList } from "@/components/ProjectList";
 import { PageTitle } from "@/components/PageHeading";
+import { ProjectList } from "@/components/ProjectList";
 import { getBlogs, type Blog } from "@/lib/blogs";
 import { getProjects } from "@/lib/projects";
 

@@ -1,7 +1,7 @@
 "use client";
 
-import { type Project } from "@/lib/projects";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { type Project } from "@/lib/projects";
 import Image from "next/image";
 import { AnimatedLinkWithUnderline } from "./AnimatedLinksWithUnderline";
 

@@ -1,7 +1,5 @@
 import Footer from "@/components/Footer";
 import { NavBar } from "@/components/Navbar";
-import Link from "next/link";
-import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx-remote";
 import {
   Breadcrumb,
@@ -10,6 +8,8 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 import { getProjectTitles, getProjectWithTitle } from "@/lib/projects";
 
