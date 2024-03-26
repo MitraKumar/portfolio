@@ -6,18 +6,24 @@ import { UnorderedList } from './mdx/UnorderedList'
 import { ListItem } from './mdx/ListItem'
 import { MdxImage } from './mdx/MDXImage'
 import { MdxLink } from './mdx/MDXLink'
+import { Component, ComponentProps, ComponentPropsWithRef, DetailedHTMLProps, ImgHTMLAttributes, ReactNode } from 'react'
+import { MDXRemoteProps } from 'next-mdx-remote/rsc'
+import { LinkProps } from 'next/link'
+import Image, { ImageProps } from 'next/image'
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+import { MDXProvider } from '@mdx-js/react';
 
 const components = {
-  h1: (props: any) => <HeaderOne {...props}>{ props.children }</HeaderOne>,
-  h2: (props: any) => <HeaderTwo {...props}>{ props.children }</HeaderTwo>,
-  p: (props: any) => <Paragragraph {...props}>{ props.children }</Paragragraph>,
-  ul: (props: any) => <UnorderedList {...props}>{ props.children }</UnorderedList>,
-  li: (props: any) => <ListItem {...props}>{ props.children }</ListItem>,
-  img: (props: any) => <MdxImage {...props}>{ props.children }</MdxImage>,
-  a: (props: any) => <MdxLink {...props}>{ props.children }</MdxLink>,
-}
+  h1: (props: ComponentProps<"h1">) => <HeaderOne {...props}>{ props.children }</HeaderOne>,
+  h2: (props: ComponentProps<"h2">) => <HeaderTwo {...props}>{ props.children }</HeaderTwo>,
+  p: (props: ComponentProps<"p">) => <Paragragraph {...props}>{ props.children }</Paragragraph>,
+  ul: (props: ComponentProps<"ul">) => <UnorderedList {...props}>{ props.children }</UnorderedList>,
+  li: (props: ComponentProps<"li">) => <ListItem {...props}>{ props.children }</ListItem>,
+  img: (props: ComponentProps<"img">) => <MdxImage {...props} />,
+  a: (props: ComponentProps<"a">) => <MdxLink {...props}>{ props.children }</MdxLink>,
+};
 
-export function CustomMDX(props: any) {
+export function CustomMDX(props: MDXRemoteProps) {
   return (
     <MDXRemote
       {...props}

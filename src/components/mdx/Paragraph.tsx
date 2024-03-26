@@ -1,5 +1,5 @@
 import { ComponentProps, ComponentPropsWithRef, ReactNode } from "react";
 
-export function Paragragraph({ children, ...props }: { props: ComponentPropsWithRef<"p"> ,children: ReactNode}) {
+export function Paragragraph({ children, ...props }: ComponentProps<"p">) {
     return <div {...props} className="mt-2">{ children }</div>;
 }
