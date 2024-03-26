@@ -1,13 +1,12 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import React, {
   createContext,
-  useState,
   useContext,
-  useRef,
   useEffect,
+  useRef,
+  useState,
 } from "react";
 import { AnimatedLinkWithUnderline } from "../AnimatedLinksWithUnderline";
 
@@ -49,10 +48,7 @@ export const CardContainer = ({
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
-        className={cn(
-          "py-8 flex justify-center",
-          containerClassName
-        )}
+        className={cn("flex justify-center py-8", containerClassName)}
         style={{
           perspective: "1000px",
         }}
@@ -63,8 +59,8 @@ export const CardContainer = ({
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           className={cn(
-            "flex justify-center relative transition-all duration-200 ease-linear",
-            className
+            "relative flex justify-center transition-all duration-200 ease-linear",
+            className,
           )}
           style={{
             transformStyle: "preserve-3d",
@@ -88,7 +84,7 @@ export const CardBody = ({
     <div
       className={cn(
         "h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
-        className
+        className,
       )}
     >
       {children}
@@ -137,7 +133,9 @@ export const CardItem = ({
 
   if (rest.isAnimatedLinkWithUnderline) {
     return (
-      <AnimatedLinkWithUnderline href={rest.href}>{children}</AnimatedLinkWithUnderline>
+      <AnimatedLinkWithUnderline href={rest.href}>
+        {children}
+      </AnimatedLinkWithUnderline>
     );
   }
 

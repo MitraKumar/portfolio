@@ -1,8 +1,8 @@
 export type Blog = {
-  id: number,
-  description: string,
-  url: string
-}
+  id: number;
+  description: string;
+  url: string;
+};
 const blogs: Blog[] = [
   {
     id: 1,
@@ -11,11 +11,12 @@ const blogs: Blog[] = [
   },
   {
     id: 2,
-    description: "Journey of creating and publishing a nodejs package with typescript & eslint support",
+    description:
+      "Journey of creating and publishing a nodejs package with typescript & eslint support",
     url: "https://dev.to/mitrakumar/journey-of-creating-and-publishing-a-nodejs-package-with-typescript-eslint-support-3gh7",
   },
-]
+];
 
 export const getBlogs = function (): Blog[] {
   return blogs;
-}
+};

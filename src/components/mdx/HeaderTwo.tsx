@@ -1,5 +1,9 @@
-import { ComponentProps, ComponentPropsWithRef, ReactNode } from "react";
+import { ComponentProps } from "react";
 
 export function HeaderTwo({ children, ...props }: ComponentProps<"h2">) {
-    return <h2 {...props} className="text-3xl mt-16 mb-6">{ children }</h2>;
+  return (
+    <h2 {...props} className="mb-6 mt-16 text-3xl">
+      {children}
+    </h2>
+  );
 }

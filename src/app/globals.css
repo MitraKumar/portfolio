@@ -1,10 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
-
     --rich-black: 209, 76%, 8%, 1;
     --saffron: 48, 96%, 45%, 1;
     --moonstone: 188, 39%, 56%, 1;
@@ -27,11 +26,11 @@
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 224 71.4% 4.1%;
- 
+
     --radius: 0.5rem;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -39,5 +38,4 @@
   body {
     @apply bg-black text-white;
   }
-
 }

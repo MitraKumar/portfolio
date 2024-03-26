@@ -1,6 +1,4 @@
-import { SecondaryButton } from "@/components/SecondaryButton";
-import { PrimaryButton } from "./PrimaryButton";
-import { TypewriterEffect, TypewriterEffectSmooth } from "./ui/typewriter-effect";
+import { TypewriterEffect } from "./ui/typewriter-effect";
 
 function Header() {
   const words = [
@@ -20,11 +18,11 @@ function Header() {
 
   return (
     <section className="container mx-auto mb-16">
-      <h1 className="mt-4 md:mt-16 mx-4 flex justify-center">
+      <h1 className="mx-4 mt-4 flex justify-center md:mt-16">
         <TypewriterEffect words={words} />
       </h1>
     </section>
-  )
+  );
 }
 
 export default Header;

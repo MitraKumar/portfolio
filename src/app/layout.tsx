@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Dancing_Script } from "next/font/google";
+import { Dancing_Script, Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
-  variable: '--font-inter',
+  variable: "--font-inter",
 });
 
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
   variable: "--font-dancing-script",
-})
+});
 
 export const metadata: Metadata = {
   title: "Porfolio - Kaushik Kr. Mitra",
@@ -32,7 +32,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${dancingScript.variable} font-inter`}>{children}</body>
+      <body
+        className={`${inter.variable} ${dancingScript.variable} font-inter`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,21 +1,17 @@
 import AboutMe from "@/components/AboutMe";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { NavBar } from "@/components/Navbar";
-import Projects from "@/components/ProjectsSection";
 import Timeline from "@/components/Timeline";
-
+import { PageTitle } from "@/components/PageHeading";
+import { SecondaryButton } from "@/components/SecondaryButton";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
-import { AnimatedLinkWithUnderline } from "@/components/AnimatedLinksWithUnderline";
-import { SecondaryButton } from "@/components/SecondaryButton";
-import { PageTitle } from "@/components/PageHeading";
+} from "@/components/ui/carousel";
 
 export default function AboutPage() {
   return (
@@ -26,16 +22,14 @@ export default function AboutPage() {
 
       <AboutMe />
 
-      <section className="container mx-auto px-4 my-16">
-        <h2 className="text-5xl text-center">Skills</h2>
-
+      <section className="container mx-auto my-16 px-4">
+        <h2 className="text-center text-5xl">Skills</h2>
 
         <Carousel>
           <CarouselContent className="space-x-4">
             <CarouselItem className="lg:basis-1/2" key={1}>
-
               <CardContainer className="inter-var" key={1}>
-                <CardBody className="bg-white relative group/card border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                <CardBody className="group/card relative h-auto w-auto rounded-xl border border-black/[0.1] bg-white p-6 sm:w-[30rem]  ">
                   <CardItem
                     translateZ="50"
                     className="text-2xl font-bold text-primary"
@@ -63,14 +57,11 @@ export default function AboutPage() {
                   </CardItem>
                 </CardBody>
               </CardContainer>
-
-
             </CarouselItem>
 
             <CarouselItem className="lg:basis-1/2" key={2}>
-
               <CardContainer className="inter-var" key={2}>
-                <CardBody className="bg-white relative group/card border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                <CardBody className="group/card relative h-auto w-auto rounded-xl border border-black/[0.1] bg-white p-6 sm:w-[30rem]  ">
                   <CardItem
                     translateZ="50"
                     className="text-2xl font-bold text-primary"
@@ -99,28 +90,23 @@ export default function AboutPage() {
                 </CardBody>
               </CardContainer>
             </CarouselItem>
-
           </CarouselContent>
 
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
 
-
         <div className="my-16 flex justify-center">
           <SecondaryButton href="/projects">View Projects</SecondaryButton>
         </div>
       </section>
 
-
-
       <div className="container mx-auto px-4">
-        <h2 className="text-5xl text-center">My Journey</h2>
+        <h2 className="text-center text-5xl">My Journey</h2>
       </div>
       <Timeline />
 
       <Footer />
-
     </main>
   );
 }
