@@ -12,8 +12,12 @@
 
 ## Design & Development
 
-The website's design is centered around a modern and clean aesthetic, utilizing the following color palette: [Color Palette](https://coolors.co/0e0a1f-e3b505-63afbb-d3f3ee-f9f9f9)
+React/Redux is used for building the site for a seamless user experience and is being deployed on **Vercel**
 
-Built with **Next.js**, this site offers a seamless user experience and is deployed on **Vercel** for optimal performance and reliability.
+## Live Url
+
+[Visit here](https://command-man.vercel.app/)
+
+## Source Code:
 
 Click [here](https://github.com/MitraKumar/command-man) to view the source for the site.

@@ -1,19 +1,31 @@
 ![bjoojb](/assets/projects/phil-o-sophy.png)
 
-# Phil-o-sophy
+# Phil-s-osophy
 
 This is a simple package which just generates random quotes from Phil Dunphy, the lovable and hilarious character from the TV show Modern Family
 
 ## Technology
 
-- React
-- Redux
-- TailwindCSS
+- Node
+- Github Actions
 
 ## Design & Development
 
-The website's design is centered around a modern and clean aesthetic, utilizing the following color palette: [Color Palette](https://coolors.co/0e0a1f-e3b505-63afbb-d3f3ee-f9f9f9)
+This is node package manager deployed on npm registry. Used Github actions to lint check the code whenever some Pull request is being created.
 
-Built with **Next.js**, this site offers a seamless user experience and is deployed on **Vercel** for optimal performance and reliability.
+## Basic Usage
+
+Install the package by running `npm i -g phil-s-osophy`
+
+Then for using the package simply run `phil-s-osophy`
+
+## Source Code
 
 Click [here](https://github.com/MitraKumar/phil-s-osophy) to view the source for the site.
+
+
+## Related Write Ups
+
+[Use bunx for running npm packages with lightning fast speed.](https://dev.to/mitrakumar/use-bunx-for-running-npm-packages-with-lightning-fast-speed-2p32)
+
+[Journey of creating and publishing a nodejs package with typescript & eslint support](https://dev.to/mitrakumar/journey-of-creating-and-publishing-a-nodejs-package-with-typescript-eslint-support-3gh7)

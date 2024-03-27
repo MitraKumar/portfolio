@@ -4,7 +4,7 @@ Welcome to my personal portfolio! This site is a comprehensive showcase of the p
 
 ## Live Site
 
-[Visit here](https://portfolio-beta-ten-13.vercel.app/)
+[Visit here](https://kkmitra.me)
 
 ## About Me
 

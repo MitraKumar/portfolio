@@ -12,8 +12,20 @@ This site is a comprehensive showcase of the projects and technologies I've work
 
 ## Design & Development
 
-The website's design is centered around a modern and clean aesthetic, utilizing the following color palette: [Color Palette](https://coolors.co/0e0a1f-e3b505-63afbb-d3f3ee-f9f9f9)
-
 Built with **Next.js**, this site offers a seamless user experience and is deployed on **Vercel** for optimal performance and reliability.
+For content management I have used plain old markdown files. Used a library `next-mdx-remote` for managing this.
 
-Click [here](#) to view the source for the site.
+*Fun note, This page is actually written in markdown file. 😉*
+
+## Live Url
+
+[Visit here](/)
+
+## Source Code
+
+Click [here](https://github.com/MitraKumar/portfolio) to view the source for the site.
+
+
+## Related Write Ups
+
+[Using markdown to manage content to NextJS App Router](https://dev.to/mitrakumar/using-markdown-to-manage-content-to-nextjs-app-router-420j)
