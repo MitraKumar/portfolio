@@ -7,14 +7,11 @@ import Projects from "@/components/ProjectsSection";
 export default function Home() {
   return (
     <main>
-      <NavBar />
       <Header />
 
       <AboutMe />
 
       <Projects />
-
-      <Footer />
     </main>
   );
 }

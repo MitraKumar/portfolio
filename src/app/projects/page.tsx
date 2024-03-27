@@ -28,7 +28,6 @@ export default function ProjectsPage() {
 
   return (
     <main>
-      <NavBar />
 
       <PageTitle>Projects</PageTitle>
 
@@ -47,7 +46,6 @@ export default function ProjectsPage() {
         </div>
       </div>
 
-      <Footer />
     </main>
   );
 }

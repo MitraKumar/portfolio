@@ -16,7 +16,6 @@ import {
 export default function AboutPage() {
   return (
     <main>
-      <NavBar />
 
       <PageTitle>About Myself</PageTitle>
 
@@ -106,7 +105,6 @@ export default function AboutPage() {
       </div>
       <Timeline />
 
-      <Footer />
     </main>
   );
 }

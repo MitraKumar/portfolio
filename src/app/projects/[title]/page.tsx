@@ -25,7 +25,6 @@ export default async function ProjectPage({
 
   return (
     <>
-      <NavBar />
 
       <div className="container mx-auto mt-8 px-4">
         <Breadcrumb>
@@ -49,7 +48,6 @@ export default async function ProjectPage({
         <CustomMDX source={markdown_data} />
       </section>
 
-      <Footer />
     </>
   );
 }
