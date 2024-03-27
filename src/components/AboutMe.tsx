@@ -33,7 +33,7 @@ function AboutMe() {
 
         <div className="my-4">
           <PrimaryButton
-            href="/assets/resume/Kaushik Kumar Mitra - Resume.pdf"
+            href="/assets/resume/Resume - Kaushik Mitra.pdf"
             text="Download CV"
             isDownloadble
           />
