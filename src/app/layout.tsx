@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Porfolio - Kaushik Kr. Mitra",
     description: "Welcome to my personal portfolio!",
-    images: "/assets/KM.png",
+    images: "/assets/logo-KKM.png",
   },
 };
 
