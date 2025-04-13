@@ -31,7 +31,7 @@ export const getProjects = function (): Project[] {
     },
     {
       id: 2,
-      title: "phil-s-osophy",
+      title: "phil-o-sophy",
       subTitle:
         "This is a simple package which just generates random quotes from Phil Dunphy, the lovable and hilarious character from the TV show Modern Family",
       description:
