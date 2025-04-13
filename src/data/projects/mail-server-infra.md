@@ -16,4 +16,4 @@ Click [here](https://github.com/MitraKumar/mailcow-server-infra) to check out th
 
 ## Related Write Ups
 
-[https://dev.to/mitrakumar/setting-up-mailcow-on-mail-server-on-an-ec2-instance-2bf6](https://dev.to/mitrakumar/setting-up-mailcow-on-mail-server-on-an-ec2-instance-2bf6)
+[Setting up mailcow on mail server on an EC2 instance](https://dev.to/mitrakumar/setting-up-mailcow-on-mail-server-on-an-ec2-instance-2bf6)
