@@ -84,7 +84,38 @@ export default function AboutPage() {
                     translateZ="60"
                     className="text-xl font-bold text-black"
                   >
-                    MySQL
+                    CSS / SCSS / Tailwind
+                  </CardItem>
+                </CardBody>
+              </CardContainer>
+            </CarouselItem>
+
+            <CarouselItem className="lg:basis-1/2" key={2}>
+              <CardContainer className="inter-var" key={2}>
+                <CardBody className="group/card relative h-auto w-auto rounded-xl border border-black/[0.1] bg-white p-6 sm:w-[30rem]  ">
+                  <CardItem
+                    translateZ="50"
+                    className="text-2xl font-bold text-primary"
+                  >
+                    Server Technology
+                  </CardItem>
+                  <CardItem
+                    translateZ="60"
+                    className="text-xl font-bold text-black"
+                  >
+                    Docker
+                  </CardItem>
+                  <CardItem
+                    translateZ="60"
+                    className="text-xl font-bold text-black"
+                  >
+                    AWS
+                  </CardItem>
+                  <CardItem
+                    translateZ="60"
+                    className="text-xl font-bold text-black"
+                  >
+                    IaC Tools (Terraform)
                   </CardItem>
                 </CardBody>
               </CardContainer>

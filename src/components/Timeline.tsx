@@ -43,8 +43,13 @@ const timeline_content: TimeLineItem[] = [
   },
   {
     title: "2020 - 2024",
-    subTitle: `Working as Software Developer at Innoraft since then...`,
+    subTitle: `Working as Software Developer at Innoraft.`,
     orientation: "left",
+  },
+  {
+    title: "2024...",
+    subTitle: `Working as Technical Associate at Sundew since then...`,
+    orientation: "right",
   },
 ];
 

@@ -17,12 +17,7 @@ function AboutMe() {
       <div className="max-w-[45ch] lg:max-w-[65ch]">
         {/* <h2 className="text-4xl xs:text-6xl mb-6">About Me</h2> */}
         <p className="mb-4">
-          I’m Kaushik Kumar Mitra, a software developer with 4 years of
-          experience at Innoraft, specializing in Drupal backend development. I
-          also have basic frontend skills in HTML, CSS, and JavaScript. I hold a
-          Bachelor of Technology degree from Budge Budge Institute of
-          Technologies. My passion lies in coding and creating software
-          solutions that solve real-world problems and enhance people’s lives.
+          I’m Kaushik Kumar Mitra, Software developer with 5+ years of experience in backend development using Drupal and Laravel. Skilled in frontend technologies like HTML, CSS, JavaScript, and React. Experienced with Docker and Terraform for containerization and infrastructure automation in cloud environments.
         </p>
         <div className="mt-4">
           <AnimatedLinkWithUnderline href="/about">

@@ -17,7 +17,7 @@ function Footer() {
               />
               <div>
                 <h3 className="text-3xl">Kaushik Mitra</h3>
-                <p className="font-thin">Software Developer</p>
+                <p className="font-thin">Technical Associate</p>
               </div>
               <div className="space-y-1">
                 <p className="flex items-center gap-4">
@@ -118,7 +118,7 @@ function Footer() {
             </div>
           </div>
           <div className="pt-4 flex flex-col md:flex-row justify-between text-white items-center">
-            <p>Copyright © 2024.</p>
+            <p>Copyright © 2025.</p>
             <p>Developed by <span className="text-primary">your's trully 😎</span></p>
           </div>
         </section >

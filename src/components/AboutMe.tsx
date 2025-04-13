@@ -17,12 +17,12 @@ function AboutMe() {
       <div className="max-w-[45ch] lg:max-w-[65ch]">
         {/* <h2 className="text-4xl xs:text-6xl mb-6">About Me</h2> */}
         <p className="mb-4">
-          Greetings, I am Kaushik Kumar Mitra, a software developer with three
-          years of professional experience at Innoraft, a company that provides
+          Greetings, I am Kaushik Kumar Mitra, a software developer with more than five
+          years of professional experience currently working at Sundew, a company that provides
           web and mobile solutions. My main expertise lies in developing backend
-          applications using Drupal, a popular content management system. I also
+          applications using Drupal, Laravel & PHP applications. I also
           have some basic skills in frontend development, such as HTML, CSS and
-          JavaScript. I hold a Bachelor of Technology degree from Budge Budge
+          JavaScript. And have experience with Docker and Terraform for containerization and infrastructure automation in cloud environments.. I hold a Bachelor of Technology degree from Budge Budge
           Institute of Technologies, an engineering college affiliated to
           Maulana Abul Kalam Azad University of Technology.
         </p>
@@ -33,7 +33,7 @@ function AboutMe() {
 
         <div className="my-4">
           <PrimaryButton
-            href="/assets/resume/Resume - Kaushik Mitra.pdf"
+            href="/assets/resume/Kaushik - CV 2025.pdf"
             text="Download CV"
             isDownloadble
           />

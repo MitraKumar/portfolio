@@ -8,7 +8,7 @@ import { AnimatedLinkWithUnderline } from "./AnimatedLinksWithUnderline";
 export const ProjectList = function ({ projects }: { projects: Project[] }) {
   return (
     <section className="container mx-auto px-4">
-      <div className="flex flex-col gap-4 md:flex-row">
+      <div className="grid grid-cols-3 gap-32">
         {projects.map((project) => (
           <CardContainer className="inter-var" key={project.id}>
             <CardBody className="group/card relative h-auto w-auto rounded-xl border border-black/[0.1] bg-white p-6 sm:w-[30rem]  ">

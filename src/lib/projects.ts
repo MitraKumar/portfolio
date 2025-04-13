@@ -31,6 +31,19 @@ export const getProjects = function (): Project[] {
     },
     {
       id: 2,
+      title: "mail-server-infra",
+      subTitle:
+        "Used terraform as the IAC tool for creating an AWS EC2 instance with necessary security groups for deploying a self-hosted mail server with mailcow.",
+      description:
+        "Used terraform as the IAC tool for creating an AWS EC2 instance with necessary security groups for deploying a self-hosted mail server with mailcow.",
+      tech: ["IaC Tools (Terraform)", "AWS"],
+      image: "/assets/projects/mail-server-cover-image.jpg",
+      links: {
+        github: "https://github.com/MitraKumar/mailcow-server-infra",
+      },
+    },
+    {
+      id: 3,
       title: "phil-o-sophy",
       subTitle:
         "This is a simple package which just generates random quotes from Phil Dunphy, the lovable and hilarious character from the TV show Modern Family",
@@ -43,7 +56,7 @@ export const getProjects = function (): Project[] {
       },
     },
     {
-      id: 3,
+      id: 4,
       title: "command-man",
       subTitle:
         "“Maze Solver” is a command-based game built with React/Redux. It challenges players to solve a maze using terminal-like commands.",
@@ -81,6 +94,9 @@ export const getProjectTitles = (): Array<{ title: string }> => {
     },
     {
       title: "command-man",
+    },
+    {
+      title: "mail-server-infra",
     },
   ];
 };
