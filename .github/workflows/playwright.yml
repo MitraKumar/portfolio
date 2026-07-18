@@ -1,0 +1,36 @@
+name: Playwright Tests
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  test:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm install --legacy-peer-deps
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: Run Playwright tests
+      run: npm run test:e2e
+      env:
+        NEXT_PUBLIC_CLERK_SIGN_IN_URL: "/sign-in"
+        NEXT_PUBLIC_CLERK_SIGN_UP_URL: "/sign-up"
+        NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL: "/"
+        NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL: "/"
+        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "pk_test_cGxlYXNlZC1zbHVnLTYxLmNsZXJrLmFjY291bnRzLmRldiQ"
+        CLERK_SECRET_KEY: "sk_test_B12J03O0DiqbXiUvCJQtYNk8FXxZq5geH2LhX1ZbOj"
+        ADMIN_LOGIN_SECRET: "mitra-admin-access"
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
