@@ -97,7 +97,7 @@ export function NavBar() {
               <NavBarMenuItem href="/about" text="About Me" onClick={closeMenu} />
               <NavBarMenuItem href="/projects" text="Projects" onClick={closeMenu} />
               <Show when="signed-in">
-                <NavBarMenuItem href="/keystatic" text="Admin" onClick={closeMenu} />
+                <NavBarMenuItem href="/keystatic" text="Dashboard" onClick={closeMenu} />
               </Show>
             </ul>
             <div className="flex flex-col items-center gap-4 md:flex-row md:gap-4 mt-6 md:mt-0 pt-6 md:pt-0 border-t border-white/10 md:border-t-0 w-full md:w-auto">
