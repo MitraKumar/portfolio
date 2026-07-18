@@ -1,3 +1,16 @@
+---
+id: 2
+subTitle: "Used terraform as the IAC tool for creating an AWS EC2 instance with necessary security groups for deploying a self-hosted mail server with mailcow."
+description: "Used terraform as the IAC tool for creating an AWS EC2 instance with necessary security groups for deploying a self-hosted mail server with mailcow."
+tech:
+  - IaC Tools (Terraform)
+  - AWS
+image: "/assets/projects/mail-server-cover-image.jpg"
+links:
+  github: "https://github.com/MitraKumar/mailcow-server-infra"
+  liveUrl: ""
+---
+
 ![bjoojb](/assets/projects/mail-server-cover-image.jpg)
 
 # Mail Server Infra

@@ -1,3 +1,16 @@
+---
+id: 3
+subTitle: "This is a simple package which just generates random quotes from Phil Dunphy, the lovable and hilarious character from the TV show Modern Family"
+description: "This is a simple package which just generates random quotes from Phil Dunphy, the lovable and hilarious character from the TV show Modern Family"
+tech:
+  - Node
+  - Github Actions
+image: "/assets/projects/phil-o-sophy.png"
+links:
+  github: "https://github.com/MitraKumar/phil-s-osophy"
+  liveUrl: ""
+---
+
 ![bjoojb](/assets/projects/phil-o-sophy.png)
 
 # Phil-s-osophy

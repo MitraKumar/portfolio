@@ -1,3 +1,17 @@
+---
+id: 4
+subTitle: "“Maze Solver” is a command-based game built with React/Redux. It challenges players to solve a maze using terminal-like commands."
+description: "“Maze Solver” is a command-based game built with React/Redux. It challenges players to solve a maze using terminal-like commands."
+tech:
+  - React
+  - Redux
+  - TailwindCSS
+image: "/assets/projects/command-man.png"
+links:
+  github: "https://github.com/MitraKumar/command-man"
+  liveUrl: "https://command-man.vercel.app/"
+---
+
 ![bjoojb](/assets/projects/command-man.png)
 
 # Command-man

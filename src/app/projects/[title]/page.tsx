@@ -71,5 +71,5 @@ export default async function ProjectPage({
 }
 
 export async function generateStaticParams() {
-  return getProjectTitles();
+  return await getProjectTitles();
 }

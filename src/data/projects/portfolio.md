@@ -1,3 +1,17 @@
+---
+id: 1
+subTitle: "This site is a comprehensive showcase of the projects and technologies I've worked with, reflecting my journey and growth as a software developer."
+description: "This site is a comprehensive showcase of the projects and technologies I've worked with, reflecting my journey and growth as a software developer."
+tech:
+  - React / NextJs
+  - TailwindCSS
+  - MDX
+image: "/assets/projects/portfolio.png"
+links:
+  github: "https://github.com/MitraKumar/portfolio"
+  liveUrl: "/"
+---
+
 ![bjoojb](/assets/projects/portfolio.png)
 
 # Portfolio

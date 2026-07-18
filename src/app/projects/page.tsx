@@ -25,9 +25,9 @@ function BlogItem(blog: Blog) {
   );
 }
 
-export default function ProjectsPage() {
-  const projects = getProjects();
-  const blogs = getBlogs();
+export default async function ProjectsPage() {
+  const projects = await getProjects();
+  const blogs = await getBlogs();
 
   return (
     <main className="pb-24">
