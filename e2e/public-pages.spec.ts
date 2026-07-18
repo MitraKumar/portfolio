@@ -109,8 +109,9 @@ test.describe("Public Pages & Navigation", () => {
     await expect(page).toHaveURL("/projects");
 
     // 5. Test invalid project page handles notFound() correctly
-    const errorResponse = await page.goto("/projects/non-existent-project-slug");
-    // Next.js notFound() renders a standard 404 page (or custom 404) with status 404
-    expect(errorResponse?.status()).toBe(404);
+    await page.goto("/projects/non-existent-project-slug");
+    // With loading.tsx configured, Next.js streams the loading shell first (responding with 200),
+    // and then renders the 404/not-found screen. We assert that "could not be found" text appears on the page.
+    await expect(page.locator("body")).toContainText("could not be found", { ignoreCase: true });
   });
 });
