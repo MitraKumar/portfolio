@@ -39,17 +39,18 @@ function HamburgerMenu({ isOpen, handleMobileNavClick }: HamburgerMenuProps) {
 type NavBarMenuItemProps = {
   href: string;
   text: string;
+  onClick?: () => void;
 };
 
-function NavBarMenuItem({ href, text }: NavBarMenuItemProps) {
+function NavBarMenuItem({ href, text, onClick }: NavBarMenuItemProps) {
   const pathname = usePathname();
   const isActive = pathname === href;
 
   return (
-    <li className="inline-block md:px-1 py-4">
+    <li className="inline-block md:px-1 py-4 w-full md:w-auto text-center" onClick={onClick}>
       <Link
         className={cn(
-          "relative w-fit text-sm font-semibold transition-all duration-300 text-muted-foreground hover:text-white px-3 py-2 rounded-md",
+          "relative block md:inline-block w-full md:w-auto text-base md:text-sm font-semibold transition-all duration-300 text-muted-foreground hover:text-white px-4 py-2.5 md:py-2 rounded-md",
           isActive && "text-primary bg-primary/10 font-bold",
         )}
         href={href}
@@ -67,12 +68,15 @@ export function NavBar() {
     setMobileMenuIsOpen((value) => !value);
   };
 
+  const closeMenu = () => setMobileMenuIsOpen(false);
+
   return (
     <header className="sticky top-0 z-[9999] bg-background/80 backdrop-blur-md border-b border-white/[0.06] shadow-sm">
       <div className="container mx-auto flex items-center justify-between px-4 h-16">
         <Link
           href="/"
           className="font-dancing-script text-3xl font-bold text-white tracking-wide hover:text-primary transition-colors"
+          onClick={closeMenu}
         >
           Mitra.
         </Link>
@@ -82,15 +86,15 @@ export function NavBar() {
         />
         <div
           className={cn(
-            "fixed inset-0 left-0 z-50 flex w-full flex-col items-center justify-center bg-background/95 p-6 pt-16 transition-transform duration-300 ease-in-out md:static md:flex md:w-auto md:flex-row md:items-center md:bg-transparent md:p-0 md:translate-x-0",
-            !mobileMenuIsOpen ? "translate-x-full" : "translate-x-0",
+            "fixed inset-0 left-0 z-50 flex w-full flex-col items-center justify-center bg-background p-6 pt-16 transition-transform duration-300 ease-in-out md:static md:flex md:w-auto md:flex-row md:items-center md:bg-transparent md:p-0 md:translate-x-0 md:visible",
+            !mobileMenuIsOpen ? "translate-x-full invisible" : "translate-x-0 visible",
           )}
         >
           <nav className="w-full md:flex">
-            <ul className="flex flex-col items-center gap-4 md:flex-row md:gap-2">
-              <NavBarMenuItem href="/" text="Home" />
-              <NavBarMenuItem href="/about" text="About Me" />
-              <NavBarMenuItem href="/projects" text="Projects" />
+            <ul className="flex flex-col items-center gap-4 md:flex-row md:gap-2 w-full md:w-auto">
+              <NavBarMenuItem href="/" text="Home" onClick={closeMenu} />
+              <NavBarMenuItem href="/about" text="About Me" onClick={closeMenu} />
+              <NavBarMenuItem href="/projects" text="Projects" onClick={closeMenu} />
             </ul>
           </nav>
         </div>

@@ -51,6 +51,9 @@
   * {
     @apply border-border;
   }
+  html, body {
+    @apply overflow-x-hidden;
+  }
   body {
     @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary min-h-screen;
     background-image: 

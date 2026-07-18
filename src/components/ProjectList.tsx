@@ -11,7 +11,7 @@ export const ProjectList = function ({ projects }: { projects: Project[] }) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
         {projects.map((project) => (
           <CardContainer className="w-full" key={project.id}>
-            <CardBody className="relative group/card h-[32rem] w-full rounded-2xl p-6 glass-card select-none flex flex-col justify-between">
+            <CardBody className="relative group/card h-[32rem] w-full rounded-2xl p-6 glass-card select-none flex flex-col justify-between active:scale-[0.98] active:border-primary/30 transition-all duration-300">
               <div>
                 <CardItem
                   translateZ="30"

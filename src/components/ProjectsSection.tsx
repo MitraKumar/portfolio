@@ -15,7 +15,7 @@ import Image from "next/image";
 function ProjectItem(project: Project) {
   return (
     <CarouselItem className="md:basis-1/2 lg:basis-1/3 p-4">
-      <div className="glass-card flex flex-col h-full rounded-2xl overflow-hidden group select-none">
+      <div className="glass-card flex flex-col h-full rounded-2xl overflow-hidden group select-none active:scale-[0.98] active:border-primary/30 transition-all duration-300">
         <div className="relative h-48 w-full overflow-hidden border-b border-white/[0.06]">
           <Image
             src={project.image}

@@ -7,18 +7,9 @@ function Footer() {
       <section className="container mx-auto">
         <div className="flex flex-col gap-8 md:flex-row justify-between pb-8 border-b border-white/[0.06] items-start md:items-center">
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/assets/logo-KKM.png"
-                alt="KKM Logo"
-                width={80}
-                height={80}
-                className="rounded-lg object-contain border border-white/[0.08]"
-              />
-              <div>
-                <h3 className="text-2xl font-bold tracking-tight text-white">Kaushik Mitra</h3>
-                <p className="text-sm text-muted-foreground font-medium">Technical Associate / Software Developer</p>
-              </div>
+            <div>
+              <h3 className="text-2xl font-bold tracking-tight text-white">Kaushik Mitra</h3>
+              <p className="text-sm text-muted-foreground font-medium">Technical Associate / Software Developer</p>
             </div>
             
             <div className="space-y-2 text-sm text-muted-foreground">

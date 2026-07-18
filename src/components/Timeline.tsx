@@ -75,7 +75,7 @@ type TimeLineComponentProp = {
 };
 
 const TimelineLeftItem = ({ title, subTitle }: TimeLineComponentProp) => (
-  <motion.div className="flex cursor-default flex-row-reverse md:contents select-none">
+  <motion.div className="flex cursor-default md:flex-row-reverse md:contents select-none">
     <motion.div
       initial="hidden"
       whileInView="visible"
@@ -91,7 +91,7 @@ const TimelineLeftItem = ({ title, subTitle }: TimeLineComponentProp) => (
       <p className="leading-relaxed text-sm md:text-base text-muted-foreground">{subTitle}</p>
     </motion.div>
     
-    <div className="relative col-start-5 col-end-6 mr-10 md:mx-auto">
+    <div className="relative col-start-5 col-end-6 mr-6 md:mr-10 md:mx-auto order-first md:order-none">
       <div className="flex h-full w-6 items-center justify-center">
         <div className="pointer-events-none h-full w-0.5 bg-gradient-to-b from-primary via-accent to-secondary opacity-25"></div>
       </div>
@@ -103,7 +103,7 @@ const TimelineLeftItem = ({ title, subTitle }: TimeLineComponentProp) => (
 function TimelineRightItem({ title, subTitle }: TimeLineComponentProp) {
   return (
     <motion.div className="flex cursor-default md:contents select-none">
-      <div className="relative col-start-5 col-end-6 mr-10 md:mx-auto">
+      <div className="relative col-start-5 col-end-6 mr-6 md:mr-10 md:mx-auto">
         <div className="flex h-full w-6 items-center justify-center">
           <div className="pointer-events-none h-full w-0.5 bg-gradient-to-b from-primary via-accent to-secondary opacity-25"></div>
         </div>
