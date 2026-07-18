@@ -38,3 +38,29 @@ export function CustomMDX(props: MDXRemoteProps) {
     />
   );
 }
+
+interface HighlightProps {
+  text: string;
+}
+const bannerSubheadingComponents = {
+  WhiteHighlight: (props: HighlightProps) => (
+    <span className="text-white font-semibold">{props.text}</span>
+  ),
+  SecondaryHighlight: (props: HighlightProps) => (
+    <span className="text-secondary font-semibold">{props.text}</span>
+  ),
+  // Wrap the whole output in your paragraph styling
+  p: (props: ComponentProps<"p">) => (
+    <p className="mx-auto max-w-[55ch] text-lg md:text-xl text-muted-foreground leading-relaxed">
+      {props.children}
+    </p>
+  )
+};
+export function BannerSubheading(props: MDXRemoteProps) {
+  return (
+    <MDXRemote
+      {...props}
+      components={{ ...bannerSubheadingComponents, ...(props.components || {}) }}
+    />
+  );
+}

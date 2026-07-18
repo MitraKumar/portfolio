@@ -1,4 +1,5 @@
-import { config, fields, collection } from '@keystatic/core';
+import { config, fields, collection, singleton } from '@keystatic/core';
+import { inline } from '@keystatic/core/content-components';
 import React from 'react';
 
 export default config({
@@ -23,7 +24,7 @@ export default config({
       ),
     },
     navigation: {
-      'Content Management': ['projects', 'blogs'],
+      'Content Management': ['settings', 'banner', 'projects', 'blogs', ],
     },
   },
   collections: {
@@ -99,6 +100,65 @@ export default config({
           },
         }),
       },
+    }),
+  },
+  singletons: {
+    settings: singleton({
+      label: 'Global Settings',
+      path: 'src/data/static',
+      schema: {
+        title: fields.text({ label: 'Title', validation: { isRequired: true } }),
+        description: fields.text({ label: 'Description', 'multiline': true, validation: { isRequired: true }})
+      }
+    }),
+    banner: singleton({
+      label: 'Banner Content',
+      path: 'src/data/banner',
+      schema: {
+        heading: fields.text({ label: 'Header' }),
+        subheading: fields.mdx({
+          label: 'Sub Heading',
+          options: {
+            bold: false,
+            italic: false,
+            blockquote: false,
+            codeBlock: false,
+            divider: false,
+            heading: false,
+            image: false,
+            orderedList: false,
+            unorderedList: false,
+            table: false,
+            link: false,
+            strikethrough: false,
+            code: false,
+          },
+          components: {
+            WhiteHighlight: inline({
+              label: 'White Highlight',
+              schema: {
+                text: fields.text({ label: 'Text to highlight' })
+              },
+              ContentView: (props) => (
+                <span style={{ color: 'white', fontWeight: 600 }}>
+                  {props.value.text || 'N/A'}
+                </span>
+              ),
+            }),
+            SecondaryHighlight: inline({
+              label: 'Secondary Highlight',
+              schema: {
+                text: fields.text({ label: 'Text to highlight' })
+              },
+              ContentView: (props) => (
+                <span style={{ color: 'hsl(182 100% 50%)', fontWeight: 600 }}>
+                  {props.value.text || 'N/A'}
+                </span>
+              ),
+            })
+          },
+        }),
+      }
     }),
   },
 });

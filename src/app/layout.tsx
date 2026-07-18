@@ -1,3 +1,5 @@
+import { createReader } from '@keystatic/core/reader';
+import keystaticConfig from '@/../keystatic.config';
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Dancing_Script, Inter } from "next/font/google";
@@ -13,14 +15,16 @@ const dancingScript = Dancing_Script({
   variable: "--font-dancing-script",
 });
 
+const reader = createReader(process.cwd(), keystaticConfig);
+const settings = await reader.singletons.settings.readOrThrow();
 export const metadata: Metadata = {
-  title: "Porfolio - Kaushik Kr. Mitra",
+  title: settings.title,
   description: "Welcome to my personal portfolio!",
   icons: {
     icon: "/assets/KM.png",
   },
   openGraph: {
-    title: "Porfolio - Kaushik Kr. Mitra",
+    title: settings.title,
     description: "Welcome to my personal portfolio!",
     images: "/assets/logo-KKM.png",
   },
