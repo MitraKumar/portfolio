@@ -64,13 +64,40 @@ export default config({
     }),
     blogs: collection({
       label: 'Blogs',
-      slugField: 'id',
+      slugField: 'title',
       path: 'src/data/blogs/*',
-      format: { data: 'json' },
+      format: { contentField: 'content' },
+      entryLayout: 'content',
       schema: {
-        id: fields.text({ label: 'ID / Order (e.g. 1)' }),
+        title: fields.slug({ name: { label: 'Title' } }),
+        id: fields.text({ label: 'ID / Order (e.g. 1)', validation: { isRequired: true } }),
         description: fields.text({ label: 'Description' }),
-        url: fields.text({ label: 'Article URL' }),
+        url: fields.conditional(
+          fields.select({
+            label: 'Type',
+            options: [
+              { label: 'External', value: 'external' },
+              { label: 'Internal', value: 'internal' },
+            ],
+            defaultValue: 'external'
+          }),
+          {
+            external: fields.url({
+              label: 'URL',
+              validation: { isRequired: true }
+            }),
+            internal: fields.empty(),
+          }
+        ),
+        content: fields.document({
+          label: 'Content',
+          formatting: true,
+          links: true,
+          images: {
+            directory: 'public/assets/content',
+            publicPath: '/assets/content',
+          },
+        }),
       },
     }),
   },
