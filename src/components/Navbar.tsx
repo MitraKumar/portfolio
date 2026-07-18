@@ -86,7 +86,7 @@ export function NavBar() {
         />
         <div
           className={cn(
-            "fixed inset-0 left-0 z-50 flex w-full flex-col items-center justify-center bg-background p-6 pt-16 transition-transform duration-300 ease-in-out md:static md:flex md:w-auto md:flex-row md:items-center md:bg-transparent md:p-0 md:translate-x-0 md:visible",
+            "fixed inset-0 w-full h-screen z-50 flex flex-col items-center justify-center bg-black p-6 transition-transform duration-300 ease-in-out md:static md:h-auto md:w-auto md:flex md:flex-row md:items-center md:bg-transparent md:p-0 md:translate-x-0 md:visible",
             !mobileMenuIsOpen ? "translate-x-full invisible" : "translate-x-0 visible",
           )}
         >
