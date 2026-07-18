@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { SignInButton, SignUpButton, Show, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MouseEvent, useState } from "react";
@@ -90,12 +91,32 @@ export function NavBar() {
             !mobileMenuIsOpen ? "translate-x-full invisible" : "translate-x-0 visible",
           )}
         >
-          <nav className="w-full md:flex">
+          <nav className="w-full md:flex md:items-center md:gap-6">
             <ul className="flex flex-col items-center gap-4 md:flex-row md:gap-2 w-full md:w-auto">
               <NavBarMenuItem href="/" text="Home" onClick={closeMenu} />
               <NavBarMenuItem href="/about" text="About Me" onClick={closeMenu} />
               <NavBarMenuItem href="/projects" text="Projects" onClick={closeMenu} />
+              <Show when="signed-in">
+                <NavBarMenuItem href="/keystatic" text="Admin" onClick={closeMenu} />
+              </Show>
             </ul>
+            <div className="flex flex-col items-center gap-4 md:flex-row md:gap-4 mt-6 md:mt-0 pt-6 md:pt-0 border-t border-white/10 md:border-t-0 w-full md:w-auto">
+              <Show when="signed-out">
+                <SignInButton mode="modal">
+                  <button className="text-sm font-semibold text-muted-foreground hover:text-white transition-colors px-3 py-1.5 rounded-md hover:bg-white/5 w-full md:w-auto text-center">
+                    Sign In
+                  </button>
+                </SignInButton>
+                <SignUpButton mode="modal">
+                  <button className="text-sm font-semibold bg-primary hover:bg-primary/80 text-white transition-colors px-4 py-1.5 rounded-md shadow-[0_0_15px_rgba(255,90,54,0.3)] w-full md:w-auto text-center">
+                    Sign Up
+                  </button>
+                </SignUpButton>
+              </Show>
+              <Show when="signed-in">
+                <UserButton />
+              </Show>
+            </div>
           </nav>
         </div>
       </div>

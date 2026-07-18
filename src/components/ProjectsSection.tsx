@@ -51,8 +51,8 @@ function ProjectItem(project: Project) {
   );
 }
 
-function Projects() {
-  const projects = getProjects();
+async function Projects() {
+  const projects = await getProjects();
 
   return (
     <div className="mt-20 md:mt-32 px-4 py-16 bg-gradient-to-b from-transparent via-black/30 to-transparent">
