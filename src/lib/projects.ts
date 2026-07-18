@@ -27,7 +27,7 @@ export const getProjects = async function (): Promise<Project[]> {
         subTitle: proj.entry.subTitle,
         description: proj.entry.description || undefined,
         tech: [...proj.entry.tech],
-        image: proj.entry.image,
+        image: proj.entry.image || "/assets/projects/portfolio.png",
         links: {
           github: proj.entry.links.github || undefined,
           liveUrl: proj.entry.links.liveUrl || undefined,
@@ -42,11 +42,20 @@ export const getProjects = async function (): Promise<Project[]> {
 
 export const getProjectWithTitle = async (title: string): Promise<string> => {
   try {
-    const file_data = await fs.readFile(
-      `${process.cwd()}/src/data/projects/${title}.md`,
-      "utf8",
-    );
-    return file_data;
+    let file_data = "";
+    try {
+      file_data = await fs.readFile(
+        `${process.cwd()}/src/data/projects/${title}.md`,
+        "utf8",
+      );
+    } catch {
+      file_data = await fs.readFile(
+        `${process.cwd()}/src/data/projects/${title}.mdoc`,
+        "utf8",
+      );
+    }
+    const regex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/;
+    return file_data.replace(regex, "");
   } catch (error) {
     return "";
   }

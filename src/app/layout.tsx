@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer";
-import { NavBar } from "@/components/Navbar";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Dancing_Script, Inter } from "next/font/google";
@@ -39,9 +37,7 @@ export default function RootLayout({
         className={`${inter.variable} ${dancingScript.variable} font-inter`}
       >
         <ClerkProvider>
-          <NavBar />
           {children}
-          <Footer />
         </ClerkProvider>
       </body>
     </html>
