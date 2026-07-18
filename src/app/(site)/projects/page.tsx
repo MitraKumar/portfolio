@@ -6,6 +6,10 @@ import { getProjects } from "@/lib/projects";
 import Image from "next/image";
 
 function BlogItem(blog: Blog) {
+
+  const blog_url = blog.url ? blog.url : `/blogs/${blog.title}`;
+  const isExternal = blog.url ? true : false;
+
   return (
     <div className="glass-card rounded-xl p-6 flex items-start gap-5 hover:border-primary/20 transition-all duration-300">
       <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-primary/10 text-primary border border-primary/20 font-bold shrink-0">
@@ -13,10 +17,10 @@ function BlogItem(blog: Blog) {
       </div>
       <div className="space-y-3 flex-1">
         <h3 className="text-xl font-bold tracking-tight text-white leading-snug">
-          {blog.description}
+          {blog.title}
         </h3>
         <div>
-          <AnimatedLinkWithUnderline href={blog.url} isExternal>
+          <AnimatedLinkWithUnderline href={blog_url} isExternal={isExternal}>
             Read Article
           </AnimatedLinkWithUnderline>
         </div>
