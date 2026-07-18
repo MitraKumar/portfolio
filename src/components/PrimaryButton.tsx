@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { CardContainer, CardItem } from "./ui/3d-card";
 
 type PrimaryButtonProps = {
@@ -6,6 +8,7 @@ type PrimaryButtonProps = {
   label?: string;
   isExternal?: boolean;
   isDownloadble?: boolean;
+  className?: string;
 };
 
 export const PrimaryButton = ({
@@ -14,36 +17,27 @@ export const PrimaryButton = ({
   label,
   isExternal,
   isDownloadble,
+  className,
 }: PrimaryButtonProps) => {
-  return (
-    <CardContainer>
-      {/* <CardBody> */}
-      <CardItem as="button" translateZ="100" className="">
-        {isDownloadble ? (
-          <a
-            aria-label={label}
-            className="bg-gradient-to-br from-accent to-primary px-6 py-3 font-bold text-black"
-            href={href}
-            target={isExternal ? "_blank" : ""}
-            download
-          >
-            {text}
-          </a>
-        ) : (
-          <a
-            aria-label={label}
-            className="bg-gradient-to-br from-accent to-primary px-6 py-3 font-bold text-black"
-            href={href}
-            target={isExternal ? "_blank" : ""}
-          >
-            {text}
-          </a>
-        )}
-      </CardItem>
-      {/* <button className="py-3 px-6 bg-gradient-to-br from-accent to-primary hover:opacity-80">
+  const buttonStyles =
+    "inline-block bg-gradient-to-br from-accent to-primary px-8 py-3.5 font-bold text-black rounded-lg transition-all duration-300 hover:opacity-90 hover:shadow-[0_0_20px_rgba(255,90,54,0.35)] text-center";
 
-        </button> */}
-      {/* </CardBody> */}
+  // Check if link is external or download link to use normal anchor, else Next.js Link
+  const isInternal = href.startsWith("/") && !isDownloadble;
+
+  return (
+    <CardContainer containerClassName="py-2 inline-block">
+      <CardItem
+        as={isInternal ? Link : "a"}
+        translateZ="40"
+        href={href}
+        aria-label={label}
+        download={isDownloadble ? true : undefined}
+        target={isExternal ? "_blank" : undefined}
+        className={cn(buttonStyles, className)}
+      >
+        {text}
+      </CardItem>
     </CardContainer>
   );
 };

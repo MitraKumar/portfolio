@@ -7,6 +7,7 @@ type TimeLineItem = {
   subTitle: string;
   orientation: "left" | "right";
 };
+
 const timeline_content: TimeLineItem[] = [
   {
     title: "Billions of Years Ago",
@@ -23,44 +24,48 @@ const timeline_content: TimeLineItem[] = [
   },
   {
     title: "April, 1998",
-    subTitle: `A special human being was born. Yes, I'm talking about myself. 😉`,
+    subTitle: "A special human being was born. Yes, I'm talking about myself. 😉",
     orientation: "left",
   },
   {
     title: "2014",
-    subTitle: `Cleared Madhyamik!!!`,
+    subTitle: "Cleared Madhyamik (10th grade) Board Exams!",
     orientation: "right",
   },
   {
     title: "2016",
-    subTitle: `Cleared Higher Secondary!!!`,
+    subTitle: "Cleared Higher Secondary (12th grade) Board Exams!",
     orientation: "right",
   },
   {
     title: "2020",
-    subTitle: `Graduated with BTech degree, in Computer Science & Engineering`,
+    subTitle: "Graduated with a B.Tech degree in Computer Science & Engineering.",
     orientation: "right",
   },
   {
     title: "2020 - 2024",
-    subTitle: `Working as Software Developer at Innoraft.`,
+    subTitle: "Worked as a Software Developer at Innoraft, building backend applications.",
     orientation: "left",
   },
   {
     title: "2024...",
-    subTitle: `Working as Technical Associate at Sundew since then...`,
+    subTitle: "Working as a Technical Associate at Sundew, designing enterprise solution architectures.",
     orientation: "right",
   },
 ];
 
 const timelineTextVariants: Variants = {
   hidden: {
-    scaleX: 0,
-    scaleY: 0,
+    opacity: 0,
+    y: 20,
   },
   visible: {
-    scaleX: 1,
-    scaleY: 1,
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1], // easeOutExpo
+    },
   },
 };
 
@@ -70,76 +75,78 @@ type TimeLineComponentProp = {
 };
 
 const TimelineLeftItem = ({ title, subTitle }: TimeLineComponentProp) => (
-  <motion.div className="flex cursor-pointer flex-row-reverse md:contents">
+  <motion.div className="flex cursor-default flex-row-reverse md:contents select-none">
     <motion.div
       initial="hidden"
       whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
       variants={timelineTextVariants}
-      className="col-start-1 col-end-5 my-4 mr-auto origin-left rounded-xl bg-gradient-to-br from-accent to-primary p-4 shadow-md md:ml-auto md:mr-[inherit] md:origin-right"
+      className="col-start-1 col-end-5 my-4 mr-auto md:ml-auto md:mr-0 rounded-xl glass-card p-6 border border-white/[0.06] shadow-xl w-full max-w-md"
     >
-      {title ? (
-        <h3 className="mb-1 text-lg font-semibold text-black">{title}</h3>
-      ) : (
-        ""
+      {title && (
+        <h3 className="mb-2 text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+          {title}
+        </h3>
       )}
-      <p className="leading-tight text-black">{subTitle}</p>
+      <p className="leading-relaxed text-sm md:text-base text-muted-foreground">{subTitle}</p>
     </motion.div>
+    
     <div className="relative col-start-5 col-end-6 mr-10 md:mx-auto">
       <div className="flex h-full w-6 items-center justify-center">
-        <div className="pointer-events-none h-full w-1 origin-top bg-gradient-to-br from-accent to-primary"></div>
+        <div className="pointer-events-none h-full w-0.5 bg-gradient-to-b from-primary via-accent to-secondary opacity-25"></div>
       </div>
-      <div className="absolute top-1/2 -mt-3 h-6 w-6 rounded-full bg-gradient-to-br from-accent to-primary shadow"></div>
+      <div className="absolute top-1/2 -mt-2 h-4 w-4 rounded-full bg-gradient-to-br from-primary to-accent shadow-[0_0_10px_rgba(255,90,54,0.5)]"></div>
     </div>
   </motion.div>
 );
 
 function TimelineRightItem({ title, subTitle }: TimeLineComponentProp) {
   return (
-    <div className="flex cursor-pointer md:contents">
+    <motion.div className="flex cursor-default md:contents select-none">
       <div className="relative col-start-5 col-end-6 mr-10 md:mx-auto">
         <div className="flex h-full w-6 items-center justify-center">
-          <div className="pointer-events-none h-full w-1 bg-gradient-to-br from-accent to-primary"></div>
+          <div className="pointer-events-none h-full w-0.5 bg-gradient-to-b from-primary via-accent to-secondary opacity-25"></div>
         </div>
-        <div className="absolute top-1/2 -mt-3 h-6 w-6 rounded-full bg-gradient-to-br from-accent to-primary shadow"></div>
+        <div className="absolute top-1/2 -mt-2 h-4 w-4 rounded-full bg-gradient-to-br from-accent to-secondary shadow-[0_0_10px_rgba(0,242,254,0.5)]"></div>
       </div>
+      
       <motion.div
         initial="hidden"
         whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
         variants={timelineTextVariants}
-        className="col-start-6 col-end-10 my-4 mr-auto origin-left rounded-xl bg-gradient-to-br from-accent to-primary p-4 shadow-md"
+        className="col-start-6 col-end-10 my-4 mr-auto rounded-xl glass-card p-6 border border-white/[0.06] shadow-xl w-full max-w-md"
       >
-        {title ? (
-          <h3 className="mb-1 text-lg font-semibold text-black">{title}</h3>
-        ) : (
-          ""
+        {title && (
+          <h3 className="mb-2 text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent to-secondary">
+            {title}
+          </h3>
         )}
-        <p className="leading-tight text-black">{subTitle}</p>
+        <p className="leading-relaxed text-sm md:text-base text-muted-foreground">{subTitle}</p>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
 
 function Timeline() {
   return (
-    <section className="container relative mx-auto mt-16">
-      <div className="relative mx-auto flex grid-cols-9 flex-col p-2 text-blue-50 md:grid">
-        {timeline_content.map((data, index) =>
-          data.orientation === "left" ? (
-            <TimelineLeftItem
-              key={index}
-              title={data.title}
-              subTitle={data.subTitle}
-            />
-          ) : (
-            <TimelineRightItem
-              key={index}
-              title={data.title}
-              subTitle={data.subTitle}
-            />
-          ),
-        )}
-      </div>
-    </section>
+    <div className="relative mx-auto flex grid-cols-9 flex-col p-2 md:grid max-w-4xl">
+      {timeline_content.map((data, index) =>
+        data.orientation === "left" ? (
+          <TimelineLeftItem
+            key={index}
+            title={data.title}
+            subTitle={data.subTitle}
+          />
+        ) : (
+          <TimelineRightItem
+            key={index}
+            title={data.title}
+            subTitle={data.subTitle}
+          />
+        ),
+      )}
+    </div>
   );
 }
 

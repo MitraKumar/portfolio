@@ -1,9 +1,13 @@
 import { ComponentProps } from "react";
+import { cn } from "@/lib/utils";
 
-export function Paragragraph({ children, ...props }: ComponentProps<"p">) {
+export function Paragraph({ children, className, ...props }: ComponentProps<"p">) {
   return (
-    <div {...props} className="mt-2">
+    <p
+      {...props}
+      className={cn("mt-4 text-muted-foreground leading-relaxed text-lg", className)}
+    >
       {children}
-    </div>
+    </p>
   );
 }

@@ -5,7 +5,7 @@ import { HeaderTwo } from "./mdx/HeaderTwo";
 import { ListItem } from "./mdx/ListItem";
 import { MdxImage } from "./mdx/MDXImage";
 import { MdxLink } from "./mdx/MDXLink";
-import { Paragragraph } from "./mdx/Paragraph";
+import { Paragraph } from "./mdx/Paragraph";
 import { UnorderedList } from "./mdx/UnorderedList";
 
 const components = {
@@ -16,7 +16,7 @@ const components = {
     <HeaderTwo {...props}>{props.children}</HeaderTwo>
   ),
   p: (props: ComponentProps<"p">) => (
-    <Paragragraph {...props}>{props.children}</Paragragraph>
+    <Paragraph {...props}>{props.children}</Paragraph>
   ),
   ul: (props: ComponentProps<"ul">) => (
     <UnorderedList {...props}>{props.children}</UnorderedList>

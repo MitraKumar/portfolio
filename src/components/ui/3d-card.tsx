@@ -132,8 +132,14 @@ export const CardItem = ({
   };
 
   if (rest.isAnimatedLinkWithUnderline) {
+    const { isAnimatedLinkWithUnderline, href, ...cleanRest } = rest;
     return (
-      <AnimatedLinkWithUnderline href={rest.href}>
+      <AnimatedLinkWithUnderline
+        ref={ref as any}
+        href={href}
+        className={cn("w-fit transition duration-200 ease-linear", className)}
+        {...cleanRest}
+      >
         {children}
       </AnimatedLinkWithUnderline>
     );

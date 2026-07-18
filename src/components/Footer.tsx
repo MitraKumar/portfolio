@@ -3,127 +3,125 @@ import { AnimatedLinkWithUnderline } from "./AnimatedLinksWithUnderline";
 
 function Footer() {
   return (
-    <>
-      <div className="px-4 py-16">
-        <section className="container mx-auto p-1">
-          <div className="flex flex-col sm:flex-row gap-4 justify-between border-y-2 border-white py-8 sm:items-center">
-            <div className="space-y-4 sm:space-y-6">
+    <footer className="mt-24 border-t border-white/[0.06] bg-black/40 backdrop-blur-sm px-4 py-12">
+      <section className="container mx-auto">
+        <div className="flex flex-col gap-8 md:flex-row justify-between pb-8 border-b border-white/[0.06] items-start md:items-center">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
               <Image
-                src={"/assets/logo-KKM.png"}
-                alt="Connect me with mail."
-                width={120}
-                height={120}
-                className="inline-block"
+                src="/assets/logo-KKM.png"
+                alt="KKM Logo"
+                width={80}
+                height={80}
+                className="rounded-lg object-contain border border-white/[0.08]"
               />
               <div>
-                <h3 className="text-3xl">Kaushik Mitra</h3>
-                <p className="font-thin">Technical Associate</p>
-              </div>
-              <div className="space-y-1">
-                <p className="flex items-center gap-4">
-                  <Image
-                    src={"/assets/social-icons/gmail.png"}
-                    alt="Connect me with mail."
-                    width={20}
-                    height={20}
-                    className="inline-block"
-                  />
-                  <span>
-                    <AnimatedLinkWithUnderline href="mailto://kaushik0976@gmail.com" isExternal>
-                      kaushik0976@gmail.com
-                    </AnimatedLinkWithUnderline>
-                  </span>
-                </p>
-                <p className="flex items-center gap-4">
-                  <Image
-                    src={"/assets/social-icons/telephone.png"}
-                    alt="Connect me with mail."
-                    width={20}
-                    height={20}
-                    className="inline-block"
-                  />
-                  <span>
-                    (+91) 9674391121
-                  </span>
-                </p>
-                <p className="flex items-center gap-4">
-                  <Image
-                    src={"/assets/social-icons/google-maps.png"}
-                    alt="Connect me with mail."
-                    width={20}
-                    height={20}
-                    className="inline-block"
-                  />
-                  <span>
-                    Kolkata, West Bengal
-                  </span>
-                </p>
+                <h3 className="text-2xl font-bold tracking-tight text-white">Kaushik Mitra</h3>
+                <p className="text-sm text-muted-foreground font-medium">Technical Associate / Software Developer</p>
               </div>
             </div>
-
-            <nav>
-              <ul className="flex sm:flex-col gap-6 md:gap-2">
-                <li>
-                  <AnimatedLinkWithUnderline href="/">Home</AnimatedLinkWithUnderline>
-                </li>
-                <li>
-                  <AnimatedLinkWithUnderline href="/about">About</AnimatedLinkWithUnderline>
-                </li>
-                <li>
-                  <AnimatedLinkWithUnderline href="/projects">Projects</AnimatedLinkWithUnderline>
-                </li>
-              </ul>
-            </nav>
-
-            <div className="flex gap-4">
-              <a
-                href="https://www.linkedin.com/in/kkmitra/"
-                target="_blank"
-                className="w-[30px]"
-                aria-label="LinkedIn"
-              >
+            
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-3">
                 <Image
-                  src={"/assets/social-icons/linkedin.png"}
-                  alt="Linked Icon"
-                  width={30}
-                  height={30}
+                  src="/assets/social-icons/gmail.png"
+                  alt="Email icon"
+                  width={16}
+                  height={16}
                 />
-              </a>
-              <a
-                href="https://github.com/MitraKumar"
-                target="_blank"
-                className="w-[30px]"
-                aria-label="Github"
-              >
+                <AnimatedLinkWithUnderline href="mailto:kaushik0976@gmail.com">
+                  kaushik0976@gmail.com
+                </AnimatedLinkWithUnderline>
+              </div>
+              <div className="flex items-center gap-3">
                 <Image
-                  src={"/assets/social-icons/github.png"}
-                  alt="Github User account"
-                  width={30}
-                  height={30}
+                  src="/assets/social-icons/telephone.png"
+                  alt="Phone icon"
+                  width={16}
+                  height={16}
                 />
-              </a>
-              <a
-                href="https://www.drupal.org/u/kkmitra"
-                target="_blank"
-                className="w-[30px]"
-                aria-label="Drupal"
-              >
+                <span>(+91) 9674391121</span>
+              </div>
+              <div className="flex items-center gap-3">
                 <Image
-                  src={"/assets/social-icons/drupal.png"}
-                  alt="Drupal account"
-                  width={30}
-                  height={30}
+                  src="/assets/social-icons/google-maps.png"
+                  alt="Location icon"
+                  width={16}
+                  height={16}
                 />
-              </a>
+                <span>Kolkata, West Bengal</span>
+              </div>
             </div>
           </div>
-          <div className="pt-4 flex flex-col md:flex-row justify-between text-white items-center">
-            <p>Copyright © 2025.</p>
-            <p>Developed by <span className="text-primary">your's trully 😎</span></p>
+
+          <nav>
+            <ul className="flex flex-row md:flex-col gap-6 md:gap-3 text-sm font-semibold">
+              <li>
+                <AnimatedLinkWithUnderline href="/">Home</AnimatedLinkWithUnderline>
+              </li>
+              <li>
+                <AnimatedLinkWithUnderline href="/about">About</AnimatedLinkWithUnderline>
+              </li>
+              <li>
+                <AnimatedLinkWithUnderline href="/projects">Projects</AnimatedLinkWithUnderline>
+              </li>
+            </ul>
+          </nav>
+
+          <div className="flex gap-4">
+            <a
+              href="https://www.linkedin.com/in/kkmitra/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.05] transition-all duration-300 hover:scale-105"
+              aria-label="LinkedIn Profile"
+            >
+              <Image
+                src="/assets/social-icons/linkedin.png"
+                alt="LinkedIn Icon"
+                width={24}
+                height={24}
+              />
+            </a>
+            <a
+              href="https://github.com/MitraKumar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.05] transition-all duration-300 hover:scale-105"
+              aria-label="Github Profile"
+            >
+              <Image
+                src="/assets/social-icons/github.png"
+                alt="Github Icon"
+                width={24}
+                height={24}
+              />
+            </a>
+            <a
+              href="https://www.drupal.org/u/kkmitra"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.05] transition-all duration-300 hover:scale-105"
+              aria-label="Drupal Profile"
+            >
+              <Image
+                src="/assets/social-icons/drupal.png"
+                alt="Drupal Icon"
+                width={24}
+                height={24}
+              />
+            </a>
           </div>
-        </section >
-      </div >
-    </>
+        </div>
+        
+        <div className="pt-6 flex flex-col md:flex-row justify-between text-xs text-muted-foreground items-center gap-4">
+          <p>© {new Date().getFullYear()} Kaushik Kumar Mitra. All rights reserved.</p>
+          <p>
+            Developed by <span className="text-primary font-bold">Yours Truly 😎</span>
+          </p>
+        </div>
+      </section>
+    </footer>
   );
 }
 
